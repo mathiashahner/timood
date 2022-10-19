@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "timood",
+    "slug": "timood",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
