@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from './button'
 import { View, StyleSheet } from 'react-native'
 
-export const NavigationBar = () => {
+export const NavigationBar = ({ text, setText }) => {
   return (
     <View style={styles.navigationBar}>
       <Button onPress={() => setText(text + 1)} title={'+'}></Button>

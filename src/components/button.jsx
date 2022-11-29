@@ -1,11 +1,22 @@
-import React from 'react'
-import { Text, StyleSheet, Pressable } from 'react-native'
+import React, { useState } from 'react'
+import { Text, StyleSheet, TouchableHighlight } from 'react-native'
 
 export const Button = ({ onPress, title }) => {
+  const [isPress, setIsPress] = useState(false)
+
+  const touchProps = {
+    activeOpacity: 1,
+    underlayColor: '#282828',
+    style: isPress ? styles.button : styles.button,
+    onHideUnderlay: () => setIsPress(false),
+    onShowUnderlay: () => setIsPress(true),
+    onPress: () => onPress(),
+  }
+
   return (
-    <Pressable style={styles.button} onPress={onPress}>
+    <TouchableHighlight {...touchProps}>
       <Text style={styles.text}>{title}</Text>
-    </Pressable>
+    </TouchableHighlight>
   )
 }
 
@@ -26,6 +37,6 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'white',
+    color: '#ffffff',
   },
 })

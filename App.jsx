@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View, NativeModules } from 'react-native'
 import { NavigationBar } from './src/components/index'
+import { StyleSheet, Text, View, NativeModules } from 'react-native'
 
 export default function App() {
   const [text, setText] = useState(0)
@@ -12,11 +12,9 @@ export default function App() {
 
       <View style={styles.container}>
         <Text style={styles.text}>{text}</Text>
-        <Text style={styles.text}>{text}</Text>
-        <Text style={styles.text}>{text}</Text>
       </View>
 
-      <NavigationBar />
+      <NavigationBar text={text} setText={setText} />
     </>
   )
 }
@@ -33,11 +31,6 @@ const styles = StyleSheet.create({
   text: {
     color: '#ffffff',
     textAlign: 'center',
-  },
-  navBar: {
-    height: '8%',
-    width: '100%',
-    flexDirection: 'row',
-    backgroundColor: '#333333',
+    fontSize: 100,
   },
 })
